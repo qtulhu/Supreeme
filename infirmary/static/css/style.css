@@ -631,3 +631,7 @@ select {
   justify-content: flex-start;
   width: 100vw;
 }
+
+.small-oferta {
+  font-size: 0.65rem!important;
+}
