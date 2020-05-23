@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Clinic</title>
+<meta name="Description" content=" index ">
+{% endblock %}
+
+{% block content %}
+
+  {% if user.is_authenticated %}
+    <div class="main-container">
+      <div class="header">
+        <nav>
+          <ul>
+            <li><a href="add-patient">Добавить пациента</a></li>
+            <li><a href="/" class="active-nav">Текущие пациенты</a></li>
+            <li><a href="">Архив</a></li>
+            <li><a href="">Помощь</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="content-block index-list">
+          <h4>Текущие пациенты</h4>
+          <div class="index-list-tab index-list-tab-before">
+            <div class="index-list-tabes">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>ФИО</th>
+                    <th>Возраст</th>
+                    <th>Диагноз</th>
+                    <th>Леч. врач</th>
+                    <th>Пульс</th>
+                    <th>SpO2</th>
+                    <th>PI</th>
+                    <th>Темп.</th>
+                    <th>Терминал</th>
+                    <th></th>
+                    <th>Статус</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th><a href="pacient">Русаков Юстин Филиппович</a></th>
+                    <th>23</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Гущин Людвиг Валерьянович</a></th>
+                    <th>25</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Тарасов Аввакуум Владимирович</a></th>
+                    <th>65</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Королёв Лазарь Евсеевич</a></th>
+                    <th>54</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Максимов Владлен Иосифович</a></th>
+                    <th>53</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Шилов Виктор Дмитриевич</a></th>
+                    <th>14</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-wait">Отключен</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Кабанов Адам Гордеевич</a></th>
+                    <th>76</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Ермаков Герман Альвианович</a></th>
+                    <th>53</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-wait">Отключен</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Титов Мартын Сергеевич</a></th>
+                    <th>63</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Беляков Яков Кириллович</a></th>
+                    <th>68</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-danger">Сбой</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Хохлов Фрол Юрьевич</a></th>
+                    <th>35</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Никонов Аввакум Геннадиевич</a></th>
+                    <th>26</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Кулаков Агафон Феликсович</a></th>
+                    <th>28</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Белоусов Наум Митрофанович</a></th>
+                    <th>43</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                  <tr>
+                    <th><a href="pacient.html">Бобров Власий Арсеньевич</a></th>
+                    <th>15</th>
+                    <th>Простуда</th>
+                    <th>Карпов Юлиан Геласьевич</th>
+                    <th>75</th>
+                    <th>97</th>
+                    <th>4,3</th>
+                    <th>36,6</th>
+                    <th>terminal 1</th>
+                    <th><a href="#editModal">Изменить</a></th>
+                    <th><span class="badge-success">Онлайн</span></th>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Модальное окно -->
+              <div id="editModal" class="modalDialog">
+                <div>
+                  <a href="#close" title="Закрыть" class="close">X</a>
+                  <h4>Изменить данные</h4>
+                  <div class="index-list-tabes-pacient">
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="text" name="naznach" placeholder="Назначение">
+                      <input type="text" name="time-weight" placeholder="Время/Вес">
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <p><input type="radio" value="preparat">Препарат</p>
+                      <p><input type="radio" value="preparat">Процедура</p>
+                      <p><input type="radio" value="preparat">Другое</p>
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="submit" name="add-naznach" value="Добавить" class="button-success">
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <p>Отправить данные для доступа пациенту</p>
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="text" name="pacient-email" placeholder="E-mail пациента">
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="submit" name="pacient-data" value="Отправить" class="button-success">
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <p>Выписать пациента</p>
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="text" name="comment-out" placeholder="Комментарий к выписке">
+                    </div>
+                    <div class="tabes-pacient-cell modal-pacient-cell">
+                      <input type="submit" name="pacient-out" value="Выписать" class="button-wait">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer">
+
+      </div>
+    </div>
+  {% else %}
+    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+  {% endif %}
+
+{% endblock %}

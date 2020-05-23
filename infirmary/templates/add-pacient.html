@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Добавить пациента</title>
+<meta name="Description" content=" index ">
+{% endblock %}
+
+{% block content %}
+
+  {% if user.is_authenticated %}
+  <div class="main-container">
+    <div class="header">
+      <nav>
+        <ul>
+          <li><a href="add-patient" class="active-nav">Добавить пациента</a></li>
+          <li><a href="/" >Текущие пациенты</a></li>
+          <li><a href="">Архив</a></li>
+          <li><a href="">Помощь</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="content-block index-list">
+        <h4>Новый пациент</h4>
+        <div class="index-list-tab">
+          <div class="index-list-tabes-pacient">
+                <div class="tabes-pacient-cell">
+                    <input type="text" name="surname" placeholder="Фамилия">
+                    <input type="datetime" name="birthdate" placeholder="Дата рождения">
+                </div>
+                <div class="tabes-pacient-cell">
+                    <input type="text" name="name" placeholder="Имя">
+                    <input type="datetime" name="start-date" placeholder="Дата поступления">
+                </div>
+                <div class="tabes-pacient-cell">
+                    <input type="text" name="fathername" placeholder="Отчество">
+                </div>
+                <div class="tabes-pacient-cell">
+                      <select id="#" class="select-pacient">
+                        <option selected hidden>Лечащий врач</option>
+                        <option value="#">Федор Петрович</option>
+                        <option value="#">Петр Федорович</option>
+                        <option value="#">Лев Противич</option>
+                      </select>
+                </div>
+                <div class="tabes-pacient-cell">
+                    <input type="text" name="diagnoz" placeholder="Диагноз">
+                </div>
+                <div class="tabes-pacient-cell">
+                    <input type="text" name="history-text" placeholder="История болезни"><br>
+                    <input type="file" name="file">
+                </div>
+                <div class="tabes-pacient-cell">
+                        <select id="#" class="select-pacient">
+                          <option disabled>Выберите устройство</option>
+                          <option value="#">terminal 1</option>
+                          <option value="#">terminal 2</option>
+                          <option value="#">terminal 3</option>
+                        </select>
+                </div>
+                <div class="tabes-pacient-cell">
+                  <input type="submit" name="save-pacient" value="Сохранить" class="button-success">
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer">
+
+      </div>
+    </div>
+  {% else %}
+    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+  {% endif %}
+
+{% endblock %}
