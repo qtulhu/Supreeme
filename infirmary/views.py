@@ -20,3 +20,15 @@ def pacient(request):
 	    request,
 	    'pacient.html',
 	)
+
+def archive(request):
+	return render(
+	    request,
+	    'archive.html',
+	)
+
+def help(request):
+	return render(
+	    request,
+	    'help.html',
+	)

@@ -1,29 +1,24 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Clinic</title>
+<title>Система СУПРИМ</title>
 <meta name="Description" content=" index ">
 {% endblock %}
 
 {% block content %}
 
   {% if user.is_authenticated %}
-    <div class="main-container">
-      <div class="header">
-        <nav>
-          <ul>
-            <li><a href="add-patient">Добавить пациента</a></li>
-            <li><a href="/" class="active-nav">Текущие пациенты</a></li>
-            <li><a href="">Архив</a></li>
-            <li><a href="">Помощь</a></li>
-          </ul>
-        </nav>
-      </div>
+
+
       <div class="content">
         <div class="content-block index-list">
           <h4>Текущие пациенты</h4>
           <div class="index-list-tab index-list-tab-before">
             <div class="index-list-tabes">
+              <div class="tabes-pacient-cell">
+                  <input type="search" name="cur-pacient-finder" placeholder="Имя пациента">
+                  <input type="submit" name="cur-pacient-find" value="Найти" class="button-secondary">
+              </div>
               <table>
                 <thead>
                   <tr>
@@ -285,10 +280,8 @@
         </div>
 
       </div>
-      <div class="footer">
 
-      </div>
-    </div>
+
   {% else %}
     <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
   {% endif %}

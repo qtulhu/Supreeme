@@ -10,6 +10,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('infirmary/', include('infirmary.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    # path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
+    path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('',RedirectView.as_view(url='/infirmary/', permanent=True)),
 ]

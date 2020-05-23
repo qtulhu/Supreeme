@@ -8,17 +8,7 @@
 {% block content %}
 
   {% if user.is_authenticated %}
-    <div class="main-container">
-    <div class="header">
-      <nav>
-        <ul>
-          <li><a href="add-patient">Добавить пациента</a></li>
-          <li><a href="/">Текущие пациенты</a></li>
-          <li><a href="">Архив</a></li>
-          <li><a href="">Помощь</a></li>
-        </ul>
-      </nav>
-    </div>
+
     <div class="content">
       <div class="content-block overview">
         <h2>Сергей Сергеевич Ю. <span class="badge-success">Онлайн</span></h2>
@@ -47,7 +37,8 @@
       <div class="content-block call-view">
         <h4>Связь с пациентом</h4>
         <div class="call-view-block">
-          <img class="user-call-pic" src="static/img/user-pic.png">
+          {% load static %}
+          <img class="user-call-pic" src="{% static 'img/user-pic.png' %}">
           <table>
             <tr>
               <th>
@@ -143,10 +134,8 @@
           </div>
         </div>
       </div>
-      <div class="footer">
 
-      </div>
-    </div>
+
 
     <!-- Графики-->
     <script>
