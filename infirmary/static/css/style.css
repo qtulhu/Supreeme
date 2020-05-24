@@ -147,7 +147,9 @@ select {
     align-items: flex-start;
     align-content: stretch;
   }
-
+  .help-text {
+    width: 90%;
+  }
 }
 
 
@@ -194,7 +196,9 @@ select {
     width: 100%;
 
   }
-
+  .help-text {
+    width: 50%;
+  }
 }
 
 .header {
@@ -631,6 +635,7 @@ select {
 
 .copyright {
   text-align: center;
+  padding-top: 15px;
 }
 
 .copyright a {
@@ -675,4 +680,9 @@ select {
 }
 .index-list-tabes h4 {
   font-weight: 300;
+}
+
+.help-text p {
+  color: #333;
+  line-height: 1.6rem;
 }

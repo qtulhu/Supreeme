@@ -7,31 +7,43 @@
 
 {% block content %}
 
-  {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
-    <div class="content">
-      <div class="content-block index-list">
-        <h4>Часто задаваемые вопросы</h4>
-        <div class="index-list-tab">
-          <div class="index-list-tabes-pacient">
-            <div class="index-list-tabes">
-            <div class="tabes-pacient-cell">
-                <input type="search" name="help-question-finder" placeholder="Введите вопрос">
-                <input type="submit" name="help-question-find" value="Найти" class="button-secondary">
-            </div>
+<div class="content">
+  <div class="content-block index-list">
+    <h4>Часто задаваемые вопросы</h4>
+    <div class="index-list-tab">
+      <div class="index-list-tabes-pacient">
+        <div class="index-list-tabes">
+          <div class="tabes-pacient-cell">
+            <input type="search" name="help-question-finder" placeholder="Введите вопрос">
+            <input type="submit" name="help-question-find" value="Найти" class="button-secondary">
+          </div>
+          <div class="help-text">
             <h4>Основные статусы пациента</h4>
-            <h4>Изменение информации ппациента</h4>
-            <h4>Добавление назначений</h4>
-            <h4>Основные понятия инфографики</h4>
-            </div>
+            <p>На странице "Текущие пациенты" в таблице сведена основная информация по каждому пациенту.
+              В столбце статус отображаются статусы. По статусу можно определить текущее состояние оборудования пациента.<br>
+              <span class="badge-success">Онлайн</span> - означает рабочее состояние оборудования, измеряющее показатели пациента.<br>
+              <span class="badge-wait">Отключен</span> - означае, что измерение показателей сейчас недоступно по некоторым причинам, но оборудование работает и подключено к сети.<br>
+              <span class="badge-danger">Сбой</span> - означает, что отсутствует питание или связь с оборудованием.</p>
+              <h4>Изменение информации пациента</h4>
+              <p>На странице "Текущие пациенты" в таблице на против имени каждого пациента нобходимо нажать "Изменить". В открывшимся окне
+                можно отправить данные для входа в личный кабинет пациенту на почту, а также выписать пациента и отправить его в архив.
+                <h4>Добавление назначений</h4>
+                На странице "Текущие пациенты" в таблице на против имени каждого пациента нобходимо нажать "Изменить". В открывшимся окне
+                можно создать новое назначение пациенту.
+                <h4>Основные понятия инфографики</h4>
+                
+              </div>
             </div>
           </div>
         </div>
-
       </div>
 
-  {% else %}
-    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
-  {% endif %}
+    </div>
 
-{% endblock %}
+    {% else %}
+    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+    {% endif %}
+
+    {% endblock %}

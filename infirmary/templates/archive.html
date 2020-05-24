@@ -7,62 +7,64 @@
 
 {% block content %}
 
-  {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
-    <div class="content">
-      <div class="content-block index-list">
-        <h4>Архивные записи пациентов</h4>
-        <div class="index-list-tab">
-          <div class="index-list-tabes-pacient">
-            <div class="index-list-tabes">
-              <div class="tabes-pacient-cell">
-                  <input type="search" name="cur-pacient-finder" placeholder="Имя пациента">
-                  <input type="submit" name="cur-pacient-find" value="Найти" class="button-secondary">
-              </div>
-              <ul class="alphabet-list">
-                <li><a href="#">А</a></li>
-                <li><a href="#">Б</a></li>
-                <li><a href="#">В</a></li>
-                <li><a href="#">Г</a></li>
-                <li><a href="#">Д</a></li>
-                <li><a href="#">Е</a></li>
-                <li><a href="#">Ё</a></li>
-                <li><a href="#">Ж</a></li>
-                <li><a href="#">З</a></li>
-                <li><a href="#">И</a></li>
-                <li><a href="#">Й</a></li>
-                <li><a href="#">К</a></li>
-                <li><a href="#">Л</a></li>
-                <li><a href="#">М</a></li>
-                <li><a href="#">Н</a></li>
-                <li><a href="#">О</a></li>
-                <li><a href="#">П</a></li>
-                <li><a href="#">Р</a></li>
-                <li><a href="#">С</a></li>
-                <li><a href="#">Т</a></li>
-                <li><a href="#">У</a></li>
-                <li><a href="#">Ф</a></li>
-                <li><a href="#">Х</a></li>
-                <li><a href="#">Ц</a></li>
-                <li><a href="#">Ч</a></li>
-                <li><a href="#">Ш</a></li>
-                <li><a href="#">Щ</a></li>
-                <li><a href="#">Э</a></li>
-                <li><a href="#">Ю</a></li>
-                <li><a href="#">Я</a></li>
-              </ul>
-              <h4>Пациенты</h4>
-              <h4>Диагнозы</h4>
-              <h4>Лечащие врачи</h4>
-              </div>
-            </div>
+<div class="content">
+  <div class="content-block index-list">
+    <h4>Архивные записи пациентов</h4>
+    <div class="index-list-tab">
+      <div class="index-list-tabes-pacient">
+        <div class="index-list-tabes">
+          <div class="tabes-pacient-cell">
+            <input type="search" name="cur-pacient-finder" placeholder="Имя пациента">
+            <input type="submit" name="cur-pacient-find" value="Найти" class="button-secondary">
+          </div>
+          <div class="help-text">
+            <ul class="alphabet-list">
+              <li><a href="#">А</a></li>
+              <li><a href="#">Б</a></li>
+              <li><a href="#">В</a></li>
+              <li><a href="#">Г</a></li>
+              <li><a href="#">Д</a></li>
+              <li><a href="#">Е</a></li>
+              <li><a href="#">Ё</a></li>
+              <li><a href="#">Ж</a></li>
+              <li><a href="#">З</a></li>
+              <li><a href="#">И</a></li>
+              <li><a href="#">Й</a></li>
+              <li><a href="#">К</a></li>
+              <li><a href="#">Л</a></li>
+              <li><a href="#">М</a></li>
+              <li><a href="#">Н</a></li>
+              <li><a href="#">О</a></li>
+              <li><a href="#">П</a></li>
+              <li><a href="#">Р</a></li>
+              <li><a href="#">С</a></li>
+              <li><a href="#">Т</a></li>
+              <li><a href="#">У</a></li>
+              <li><a href="#">Ф</a></li>
+              <li><a href="#">Х</a></li>
+              <li><a href="#">Ц</a></li>
+              <li><a href="#">Ч</a></li>
+              <li><a href="#">Ш</a></li>
+              <li><a href="#">Щ</a></li>
+              <li><a href="#">Э</a></li>
+              <li><a href="#">Ю</a></li>
+              <li><a href="#">Я</a></li>
+            </ul>
+            <h4>Пациенты</h4>
+            <h4>Диагнозы</h4>
+            <h4>Лечащие врачи</h4>
           </div>
         </div>
-
       </div>
+    </div>
+  </div>
 
-  {% else %}
-    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
-  {% endif %}
+</div>
+
+{% else %}
+<a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+{% endif %}
 
 {% endblock %}
