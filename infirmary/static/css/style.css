@@ -58,7 +58,8 @@ select {
 
 .button-success {
   background: #4CAF50;
-  color: #fff;
+  color: #fff!important;
+
   transition: 0.2s;
 }
 
@@ -87,6 +88,8 @@ select {
   background: #FFA000;
   color: #fff;
   transition: 0.2s;
+  color: #fff!important;
+
 }
 .button-wait:hover {
   background: #EF6C00;
@@ -97,6 +100,8 @@ select {
   background: #B0BEC5;
   color: #fff;
   transition: 0.2s;
+  color: #fff!important;
+
 }
 .button-secondary:hover {
   background: #546E7A;
@@ -560,8 +565,17 @@ select {
   padding: 10px 20px 10px 13px;
   margin: 7px;
   font-size: 1rem;
+  color:#666;
+  height: auto;
   border: 1px solid #CFD8DC;
   border-radius: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.tabes-pacient-cell span {
+  display: flex;
+  flex-direction: column;
+  color:#333;
 }
 .select-pacient {
   padding: 10px 20px 10px 13px;

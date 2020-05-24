@@ -15,15 +15,17 @@
         <div class="index-list-tab">
           <div class="index-list-tabes-pacient">
                 <div class="tabes-pacient-cell">
-                    <input type="text" name="surname" placeholder="Фамилия">
-                    <input type="datetime" name="birthdate" placeholder="Дата рождения">
+                    <input type="text" name="surname" placeholder="*Фамилия">
+                    <span>*Дата рождения<input type="date" name="birthdate" placeholder="Дата рождения"></span>
+
+
                 </div>
                 <div class="tabes-pacient-cell">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="datetime" name="start-date" placeholder="Дата поступления">
+                    <input type="text" name="name" placeholder="*Имя">
+                    <span>*Дата поступления<input type="date" name="start-date" placeholder="Дата поступления"></span>
                 </div>
                 <div class="tabes-pacient-cell">
-                    <input type="text" name="fathername" placeholder="Отчество">
+                    <input type="text" name="fathername" placeholder="Отчество (при наличии)">
                 </div>
                 <div class="tabes-pacient-cell">
                       <select id="#" class="select-pacient">
@@ -34,7 +36,7 @@
                       </select>
                 </div>
                 <div class="tabes-pacient-cell">
-                    <input type="text" name="diagnoz" placeholder="Диагноз">
+                    <input type="text" name="diagnoz" placeholder="*Диагноз">
                 </div>
                 <div class="tabes-pacient-cell">
                     <input type="text" name="history-text" placeholder="История болезни"><br>
@@ -47,6 +49,10 @@
                           <option value="#">terminal 2</option>
                           <option value="#">terminal 3</option>
                         </select>
+
+                </div>
+                <div class="tabes-pacient-cell">
+                  <p class="small-oferta">Поля, помеченные *, обязательны к заполнению.</p>
                 </div>
                 <div class="tabes-pacient-cell">
                   <input type="submit" name="save-pacient" value="Сохранить" class="button-success">
