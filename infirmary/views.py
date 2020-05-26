@@ -56,3 +56,9 @@ def help(request):
 	    request,
 	    'help.html',
 	)
+
+def monitoring(request):
+	return render(
+	    request,
+	    'monitoring.html',
+	)

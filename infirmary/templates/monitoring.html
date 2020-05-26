@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Мониторинг | Система СУПРИМ</title>
+<meta name="Description" content=" index ">
+{% endblock %}
+
+
+
+{% block header %}
+{% if user.is_authenticated %}
+<div class="main-container">
+  <div class="header">
+    <nav>
+      <ul>
+        <li><a href="monitoring" class="active-nav">Мониторинг</a></li>
+        <li><a href="add-patient">Добавить пациента</a></li>
+        <li><a href="/" >Текущие пациенты</a></li>
+        <li><a href="archive" >Архив</a></li>
+        <li><a href="help">Помощь</a></li>
+        <li><a href="">Профиль</a></li>
+        <li><a href="{% url 'logout'%}">Выйти</a></li>
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+  {% endblock %}
+
+
+
+  {% block content %}
+
+  {% if user.is_authenticated %}
+
+  <div class="content">
+    <div class="content-block index-list">
+      <h4><a href="#">Медицинское учреждение №58 (Городская больница)</a></h4>
+      <div class="index-list-tab">
+        <div class="index-list-tabes-pacient">
+
+            <div class="monitoring-level-top">
+              <div class="monitoring-level-top-item">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><h5><a href="#">Палата №4</a></h5></th>
+                      <th><div class="badge-success">Онлайн</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Всего коек:</th>
+                      <th>12</th>
+                    </tr>
+                    <tr>
+                      <th>Проблемные:</th>
+                      <th>4</th>
+                    </tr>
+                    <tr>
+                      <th>Подключены:</th>
+                      <th>5</th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+
+            </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% else %}
+  <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+  {% endif %}
+
+  {% endblock %}

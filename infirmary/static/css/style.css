@@ -700,3 +700,18 @@ select {
   color: #333;
   line-height: 1.6rem;
 }
+.monitoring-level-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.monitoring-level-top-item {
+  width: 200px;
+  height: 150px;
+  background: #999;
+  display: block;
+  padding: 15px;
+}
