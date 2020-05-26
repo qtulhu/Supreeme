@@ -5,6 +5,25 @@
 <meta name="Description" content=" index ">
 {% endblock %}
 
+
+{% block header %}
+  {% if user.is_authenticated %}
+<div class="main-container">
+<div class="header">
+  <nav>
+    <ul>
+      <li><a href="add-patient">Добавить пациента</a></li>
+      <li><a href="/" class="active-nav">Текущие пациенты</a></li>
+      <li><a href="archive">Архив</a></li>
+      <li><a href="help">Помощь</a></li>
+      <li><a href="">Профиль</a></li>
+      <li><a href="{% url 'logout'%}">Выйти</a></li>
+    </ul>
+  </nav>
+</div>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 
   {% if user.is_authenticated %}
@@ -37,11 +56,13 @@
                   </tr>
                 </thead>
                 <tbody>
+{% for index in pacient_info %}
                   <tr>
-                    <th><a href="pacient">Русаков Юстин Филиппович</a></th>
-                    <th>23</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
+                    <!-- <th><a href="pacient">{{index.last_name}} {{index.first_name}}</a></th> -->
+                    <th><a href="pacient">{{index.ill}}</a></th>
+                    <th>{{index.age}}</th>
+                    <th>{{index.diagnosis}}</th>
+                    <th>{{index.doctor}}</th>
                     <th>75</th>
                     <th>97</th>
                     <th>4,3</th>
@@ -49,189 +70,7 @@
                     <th>terminal 1</th>
                     <th><a href="#editModal">Изменить</a></th>
                     <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Гущин Людвиг Валерьянович</a></th>
-                    <th>25</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Тарасов Аввакуум Владимирович</a></th>
-                    <th>65</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Королёв Лазарь Евсеевич</a></th>
-                    <th>54</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Максимов Владлен Иосифович</a></th>
-                    <th>53</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Шилов Виктор Дмитриевич</a></th>
-                    <th>14</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-wait">Отключен</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Кабанов Адам Гордеевич</a></th>
-                    <th>76</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Ермаков Герман Альвианович</a></th>
-                    <th>53</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-wait">Отключен</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Титов Мартын Сергеевич</a></th>
-                    <th>63</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Беляков Яков Кириллович</a></th>
-                    <th>68</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-danger">Сбой</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Хохлов Фрол Юрьевич</a></th>
-                    <th>35</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Никонов Аввакум Геннадиевич</a></th>
-                    <th>26</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Кулаков Агафон Феликсович</a></th>
-                    <th>28</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Белоусов Наум Митрофанович</a></th>
-                    <th>43</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
-                  <tr>
-                    <th><a href="pacient">Бобров Власий Арсеньевич</a></th>
-                    <th>15</th>
-                    <th>Простуда</th>
-                    <th>Карпов Юлиан Геласьевич</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-                  </tr>
+{% endfor %}
                 </tbody>
               </table>
               <!-- Модальное окно -->

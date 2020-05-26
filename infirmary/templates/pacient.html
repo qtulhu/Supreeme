@@ -5,13 +5,33 @@
 <meta name="Description" content=" patient ">
 {% endblock %}
 
+{% block header %}
+  {% if user.is_authenticated %}
+<div class="main-container">
+<div class="header">
+  <nav>
+    <ul>
+      <li><a href="add-patient">Добавить пациента</a></li>
+      <li><a href="/">Текущие пациенты</a></li>
+      <li><a href="archive">Архив</a></li>
+      <li><a href="help">Помощь</a></li>
+      <li><a href="">Профиль</a></li>
+      <li><a href="{% url 'logout'%}">Выйти</a></li>
+    </ul>
+  </nav>
+</div>
+  {% endif %}
+{% endblock %}
+
+
+
 {% block content %}
 
   {% if user.is_authenticated %}
 
     <div class="content">
       <div class="content-block overview">
-        <h2>Сергей Сергеевич Ю. <span class="badge-success">Онлайн</span></h2>
+        <h2>Коломин Иван В. <span class="badge-success">Онлайн</span></h2>
         <h4>Общие показатели</h4>
         <div class="monitor-block">
           <h5>Пульс: 75 уд/мин</h5>

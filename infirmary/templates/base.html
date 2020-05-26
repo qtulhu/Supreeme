@@ -12,17 +12,8 @@
 			
 	</head>
 	<body>
-		<div class="main-container">
-    <div class="header">
-      <nav>
-        <ul>
-          <li><a href="add-patient">Добавить пациента</a></li>
-          <li><a href="/" class="active-nav">Текущие пациенты</a></li>
-          <li><a href="archive">Архив</a></li>
-          <li><a href="help">Помощь</a></li>
-        </ul>
-      </nav>
-    </div>
+		
+		  {% block header %}{% endblock %}
     	{% block content %}{% endblock %}
 			<div class="footer">
 				<p>Индикативная система мониторинга показателей пациента «СУПРИМ».</p>
