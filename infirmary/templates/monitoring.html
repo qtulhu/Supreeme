@@ -14,7 +14,6 @@
     <nav>
       <ul>
         <li><a href="monitoring" class="active-nav">Мониторинг</a></li>
-        <li><a href="add-patient">Добавить пациента</a></li>
         <li><a href="/" >Текущие пациенты</a></li>
         <li><a href="archive" >Архив</a></li>
         <li><a href="help">Помощь</a></li>
@@ -37,7 +36,9 @@
       <h4><a href="#">Медицинское учреждение №58 (Городская больница)</a></h4>
       <div class="index-list-tab">
         <div class="index-list-tabes-pacient">
-
+          <div class="tabes-pacient-cell">
+            <input type="submit" name="add-room" value="Добавить палату" class="button-success">
+            </div>
             <div class="monitoring-level-top">
               <div class="monitoring-level-top-item">
                 <table>
@@ -54,11 +55,111 @@
                     </tr>
                     <tr>
                       <th>Проблемные:</th>
-                      <th>4</th>
+                      <th><span class="badge-danger">4</span></th>
                     </tr>
                     <tr>
                       <th>Подключены:</th>
-                      <th>5</th>
+                      <th><span class="badge-success">5</span></th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+              <div class="monitoring-level-top-item">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><h5><a href="#">Палата №4</a></h5></th>
+                      <th><div class="badge-success">Онлайн</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Всего коек:</th>
+                      <th>12</th>
+                    </tr>
+                    <tr>
+                      <th>Проблемные:</th>
+                      <th><span class="badge-danger">4</span></th>
+                    </tr>
+                    <tr>
+                      <th>Подключены:</th>
+                      <th><span class="badge-success">5</span></th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+              <div class="monitoring-level-top-item">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><h5><a href="#">Палата №8</a></h5></th>
+                      <th><div class="badge-success">Онлайн</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Всего коек:</th>
+                      <th>12</th>
+                    </tr>
+                    <tr>
+                      <th>Проблемные:</th>
+                      <th><span class="badge-danger">4</span></th>
+                    </tr>
+                    <tr>
+                      <th>Подключены:</th>
+                      <th><span class="badge-success">5</span></th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+              <div class="monitoring-level-top-item">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><h5><a href="#">Палата №1</a></h5></th>
+                      <th><div class="badge-success">Онлайн</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Всего коек:</th>
+                      <th>12</th>
+                    </tr>
+                    <tr>
+                      <th>Проблемные:</th>
+                      <th><span class="badge-danger">4</span></th>
+                    </tr>
+                    <tr>
+                      <th>Подключены:</th>
+                      <th><span class="badge-success">5</span></th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+              <div class="monitoring-level-top-item">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><h5><a href="#">Палата №6</a></h5></th>
+                      <th><div class="badge-success">Онлайн</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Всего коек:</th>
+                      <th>12</th>
+                    </tr>
+                    <tr>
+                      <th>Проблемные:</th>
+                      <th><span class="badge-danger">4</span></th>
+                    </tr>
+                    <tr>
+                      <th>Подключены:</th>
+                      <th><span class="badge-success">5</span></th>
                     </tr>
                   </tbody>
 
@@ -67,7 +168,29 @@
 
             </div>
 
-          
+            <div class="monitoring-level-secondary">
+              <h4>Палата №... (После нажатия на палату в этом блоке отображаются койки)</h4>
+              <div class="tabes-pacient-cell">
+                <input type="submit" name="add-bed" value="Добавить койку" class="button-success">
+              </div>
+              <div class="monitoring-level-secondary-item">
+                <div class="monitoring-level-secondary-item-bed-online"><span>1</span></div>
+                <div class="monitoring-level-secondary-item-bed-online"><span>2</span></div>
+                <div class="monitoring-level-secondary-item-bed-online"><span>3</span></div>
+                <div class="monitoring-level-secondary-item-bed-online"><span>4</span></div>
+                <div class="monitoring-level-secondary-item-bed-online"><span>5</span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span>6</span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span>7</span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span>8</span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span>9</span></div>
+                <div class="monitoring-level-secondary-item-bed-none"><span>10</span></div>
+                <div class="monitoring-level-secondary-item-bed-none"><span>11</span></div>
+                <div class="monitoring-level-secondary-item-bed-none"><span>12</span></div>
+              </div>
+
+
+            </div>
+
         </div>
       </div>
     </div>

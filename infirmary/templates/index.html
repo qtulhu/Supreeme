@@ -7,123 +7,129 @@
 
 
 {% block header %}
-  {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 <div class="main-container">
-<div class="header">
-  <nav>
-    <ul>
-      <li><a href="monitoring">Мониторинг</a></li>
-      <li><a href="add-patient">Добавить пациента</a></li>
-      <li><a href="/" class="active-nav">Текущие пациенты</a></li>
-      <li><a href="archive">Архив</a></li>
-      <li><a href="help">Помощь</a></li>
-      <li><a href="">Профиль</a></li>
-      <li><a href="{% url 'logout'%}">Выйти</a></li>
-    </ul>
-  </nav>
-</div>
+  <div class="header">
+    <nav>
+      <ul>
+        <li><a href="monitoring">Мониторинг</a></li>
+        <li><a href="/" class="active-nav">Текущие пациенты</a></li>
+        <li><a href="archive">Архив</a></li>
+        <li><a href="help">Помощь</a></li>
+        <li><a href="">Профиль</a></li>
+        <li><a href="{% url 'logout'%}">Выйти</a></li>
+      </ul>
+    </nav>
+  </div>
   {% endif %}
-{% endblock %}
+  {% endblock %}
 
-{% block content %}
+  {% block content %}
 
   {% if user.is_authenticated %}
 
 
-      <div class="content">
-        <div class="content-block index-list">
-          <h4>Текущие пациенты</h4>
-          <div class="index-list-tab index-list-tab-before">
-            <div class="index-list-tabes">
-              <div class="tabes-pacient-cell">
-                  <input type="search" name="cur-pacient-finder" placeholder="Имя пациента">
-                  <input type="submit" name="cur-pacient-find" value="Найти" class="button-secondary">
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>ФИО</th>
-                    <th>Возраст</th>
-                    <th>Диагноз</th>
-                    <th>Леч. врач</th>
-                    <th>Пульс</th>
-                    <th>SpO2</th>
-                    <th>PI</th>
-                    <th>Темп.</th>
-                    <th>Терминал</th>
-                    <th></th>
-                    <th>Статус</th>
-                  </tr>
-                </thead>
-                <tbody>
-{% for index in pacient_info %}
-                  <tr>
-                    <!-- <th><a href="pacient">{{index.last_name}} {{index.first_name}}</a></th> -->
-                    <th><a href="pacient">{{index.ill}}</a></th>
-                    <th>{{index.age}}</th>
-                    <th>{{index.diagnosis}}</th>
-                    <th>{{index.doctor}}</th>
-                    <th>75</th>
-                    <th>97</th>
-                    <th>4,3</th>
-                    <th>36,6</th>
-                    <th>terminal 1</th>
-                    <th><a href="#editModal">Изменить</a></th>
-                    <th><span class="badge-success">Онлайн</span></th>
-{% endfor %}
-                </tbody>
-              </table>
-              <!-- Модальное окно -->
-              <div id="editModal" class="modalDialog">
-                <div>
-                  <a href="#close" title="Закрыть" class="close">X</a>
-                  <h4>Изменить данные</h4>
-                  <div class="index-list-tabes-pacient">
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="text" name="naznach" placeholder="Назначение">
-                      <input type="text" name="time-weight" placeholder="Время/Вес">
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <p><input type="radio" value="preparat">Препарат</p>
-                      <p><input type="radio" value="preparat">Процедура</p>
-                      <p><input type="radio" value="preparat">Другое</p>
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="submit" name="add-naznach" value="Добавить" class="button-success">
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <p>Отправить данные для доступа пациенту</p>
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="text" name="pacient-email" placeholder="E-mail пациента">
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="submit" name="pacient-data" value="Отправить" class="button-success">
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <p>Выписать пациента</p>
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="text" name="comment-out" placeholder="Комментарий к выписке">
-                    </div>
-                    <div class="tabes-pacient-cell modal-pacient-cell">
-                      <input type="submit" name="pacient-out" value="Выписать" class="button-wait">
-                    </div>
+  <div class="content">
+    <div class="content-block index-list">
+      <h4>Текущие пациенты</h4>
+      <div class="index-list-tab index-list-tab-before">
+        <div class="index-list-tabes">
+          <div class="tabes-pacient-cell">
+            <input type="search" name="cur-pacient-finder" placeholder="Имя пациента">
+            <input type="submit" name="cur-pacient-find" value="Найти" class="button-secondary">
 
+            <a href="add-patient" class="button-add-pacient">Добавить пациента</a>
+
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>ФИО</th>
+                <th>Возраст</th>
+                <th>Диагноз</th>
+                <th>Леч. врач</th>
+                <th>Пульс</th>
+                <th>SpO2</th>
+                <th>PI</th>
+                <th>Темп.</th>
+                <th>Палата</th>
+                <th>Койка</th>
+                <th>Терминал</th>
+                <th></th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for index in pacient_info %}
+              <tr>
+                <!-- <th><a href="pacient">{{index.last_name}} {{index.first_name}}</a></th> -->
+                <th><a href="pacient">{{index.ill}}</a></th>
+                <th>{{index.age}}</th>
+                <th>{{index.diagnosis}}</th>
+                <th>{{index.doctor}}</th>
+                <th>75</th>
+                <th>97</th>
+                <th>4,3</th>
+                <th>36,6</th>
+                <th>5</th>
+                <th>3</th>
+                <th>terminal 1</th>
+                <th><a href="#editModal">Изменить</a></th>
+                <th><span class="badge-success">Онлайн</span></th>
+                {% endfor %}
+              </tbody>
+            </table>
+            <!-- Модальное окно -->
+            <div id="editModal" class="modalDialog">
+              <div>
+                <a href="#close" title="Закрыть" class="close">X</a>
+                <h4>Изменить данные</h4>
+                <div class="index-list-tabes-pacient">
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="text" name="naznach" placeholder="Назначение">
+                    <input type="text" name="time-weight" placeholder="Время/Вес">
                   </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <p><input type="radio" value="preparat">Препарат</p>
+                    <p><input type="radio" value="preparat">Процедура</p>
+                    <p><input type="radio" value="preparat">Другое</p>
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="submit" name="add-naznach" value="Добавить" class="button-success">
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <p>Отправить данные для доступа пациенту</p>
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="text" name="pacient-email" placeholder="E-mail пациента">
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="submit" name="pacient-data" value="Отправить" class="button-success">
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <p>Выписать пациента</p>
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="text" name="comment-out" placeholder="Комментарий к выписке">
+                  </div>
+                  <div class="tabes-pacient-cell modal-pacient-cell">
+                    <input type="submit" name="pacient-out" value="Выписать" class="button-wait">
+                  </div>
+
                 </div>
               </div>
-
             </div>
+
           </div>
         </div>
-
       </div>
 
+    </div>
 
-  {% else %}
+
+    {% else %}
     <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
-  {% endif %}
+    {% endif %}
 
-{% endblock %}
+    {% endblock %}

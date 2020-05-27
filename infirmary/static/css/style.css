@@ -63,6 +63,25 @@ select {
   transition: 0.2s;
 }
 
+.button-add-pacient {
+  background: #4CAF50;
+  color: #fff;
+  transition: 0.2s;
+  padding: 10px 20px 10px 13px;
+  margin: 7px;
+  font-size: 1rem;
+  height: auto;
+  border: 1px solid #CFD8DC;
+  border-radius: 5px;
+}
+
+.button-add-pacient:hover {
+  text-decoration: none;
+  background: #2E7D32;
+  transition: 0.2s;
+  color: #fff;
+}
+
 .button-success:hover {
   background: #2E7D32;
   transition: 0.2s;
@@ -462,14 +481,14 @@ select {
 }
 .index-list-tabes {
   overflow-x: scroll;
-  margin-bottom: -32px;
+  margin-bottom: -30px;
 }
 .index-list-tab-before table {
   counter-reset: rowNumber;
   text-align: left;
   border-spacing: 0;
   font-size: 1.1rem;
-
+  padding-bottom: 25px;
   display: table;
   width: 100%;
 }
@@ -611,12 +630,15 @@ select {
     width: 70%;
     max-width: 700px;
     position: relative;
-    margin: 10% auto;
+    margin: 2% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;
     background: #fff;
     display: flex;
     flex-direction: column;
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .close {
@@ -624,10 +646,10 @@ select {
     color: #FFFFFF;
     line-height: 25px;
     position: absolute;
-    right: -12px;
+    right: 10px;
     text-align: center;
-    top: -10px;
-    width: 24px;
+
+    width: 40px;
     text-decoration: none;
     font-weight: bold;
     -webkit-border-radius: 12px;
@@ -709,9 +731,110 @@ select {
 }
 
 .monitoring-level-top-item {
-  width: 200px;
-  height: 150px;
-  background: #999;
+  width: 300px;
+  height: 175px;
+  background: #EFF4FB;
   display: block;
   padding: 15px;
+  border:3px solid #CFD8DC;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.monitoring-level-top-item table {
+  text-align: left;
+  margin: 25px auto 0px auto;
+  font-size: 1.2rem;
+}
+
+.monitoring-level-top-item table h5 {
+  margin: 0px;
+  font-size: 1.4rem;
+}
+
+.monitoring-level-top-item table tbody tr th {
+  border-right: none;
+  padding: 3px 20px 3px 0px;
+  color:#333;
+}
+
+.monitoring-level-top-item table tbody tr th span {
+  font-size: 1.2rem;
+}
+
+.monitoring-level-top-item table tbody tr:hover {
+  background: none;
+  color:#333;
+}
+
+.monitoring-level-top-item table thead tr th {
+
+  padding: 0px;
+}
+
+.monitoring-level-secondary {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.monitoring-level-secondary-item {
+  width: 550px;
+  height: 365px;
+  background: #EFF4FB;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 15px;
+  border:3px solid #CFD8DC;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.monitoring-level-secondary-item-bed-online {
+  width: 10%;
+  height: 25%;
+  background: #43A047;
+  margin-right: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.monitoring-level-secondary-item-bed-online span {
+  margin: auto;
+  color:#fff;
+  font-size: 1.3rem;
+}
+
+.monitoring-level-secondary-item-bed-offline span {
+  margin: auto;
+  color:#fff;
+  font-size: 1.3rem;
+}
+.monitoring-level-secondary-item-bed-none span {
+  margin: auto;
+  color:#333;
+  font-size: 1.3rem;
+}
+.monitoring-level-secondary-item-bed-offline {
+  width: 10%;
+  height: 25%;
+  display: flex;
+  background: #E53935;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.monitoring-level-secondary-item-bed-none {
+  width: 10%;
+  height: 25%;
+  display: flex;
+  background: #CFD8DC;
+  margin-right: 10px;
+  border-radius: 10px;
 }
