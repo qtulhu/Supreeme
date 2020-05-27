@@ -9,19 +9,26 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-			
+
 	</head>
 	<body>
-		
+
 		  {% block header %}{% endblock %}
     	{% block content %}{% endblock %}
-			<div class="footer">
-				<p>Индикативная система мониторинга показателей пациента «СУПРИМ».</p>
-				<p>Если вы заметили ошибки в работе системы или же хотите внести предложения,<br>
-					пишите на почту <b>nsibox@yandex.ru</b>.</p><br>
-				<p class="small-oferta">* Отображаемые в системе данные измеряются с определённой погрешностью. <br>Не рекомендуется полностью полагаться на приведённые данные для принятия решений.</p>
-				<p class="copyright">© 2020 Разработка и поддержка студия <a href="https://instagram.com/work.network?igshid=12se6ni67g0i9" target="_blank">Work.network</a></p>
-			</div>
+			<!-- {% block footer %}{% endblock %} -->
+
+
+{% if user.is_authenticated %}
+			    <div class="footer">
+			      <p>Индикативная система мониторинга показателей пациента «СУПРИМ».</p>
+			      <p>Если вы заметили ошибки в работе системы или же хотите внести предложения,<br>
+			        пишите на почту <b>nsibox@yandex.ru</b>.</p><br>
+			      <p class="small-oferta">* Отображаемые в системе данные измеряются с определённой погрешностью. <br>Не рекомендуется полностью полагаться на приведённые данные для принятия решений.</p>
+			      <p class="copyright">© 2020 Разработка и поддержка студия <a href="https://instagram.com/work.network?igshid=12se6ni67g0i9" target="_blank">Work.network</a></p>
+			    </div>
+{% endif %}
+
+
 		</div>
 	</body>
 </html>

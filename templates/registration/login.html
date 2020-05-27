@@ -13,10 +13,16 @@
     <p class="notification bg-warning">Пожалуйста авторизируйтесь, чтобы увидеть страницу</p>
   {% endif %}
 {% endif %}
+
+
+
 <div class="login-block">
+
   <div class="card bg-light">
+
   <form class="form-control" method="post" action="{% url 'login' %}">
-{% csrf_token %}
+      {% csrf_token %}
+
   <div class="form-group">
     <label for="login">Логин:</label>
       {{ form.username }}
@@ -34,6 +40,8 @@
 
 {# Assumes you setup the password_reset view in your URLconf #}
 <!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
+
+
 </div>
 </div>
 {% endblock %}
