@@ -3,34 +3,37 @@
 {% block content %}
 
 {% if form.errors %}
-  <p class="notification bg-danger">Ваш логин или пароль не подходят. Попробуйте снова</p>
+<p class="notification bg-danger">Ваш логин или пароль не подходят. Попробуйте снова</p>
 {% endif %}
 
 {% if next %}
-  {% if user.is_authenticated %}
-    <p class="notification bg-warning">У вас нет доступа к этой странице!</p>
-  {% else %}
-    <p class="notification bg-warning">Пожалуйста авторизируйтесь, чтобы увидеть страницу</p>
-  {% endif %}
+{% if user.is_authenticated %}
+<p class="notification bg-warning">У вас нет доступа к этой странице!</p>
+{% else %}
+<p class="notification bg-warning">Пожалуйста авторизируйтесь, чтобы увидеть страницу</p>
 {% endif %}
-<div class="login-block">
-  <div class="card bg-light">
-  <form class="form-control" method="post" action="{% url 'login' %}">
-{% csrf_token %}
-  <div class="form-group">
-    <label for="login">Логин:</label>
+{% endif %}
+<div class="reg-form-screen">
+  <div class="reg-form">
+    <form class="form-control" method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+
+      <label for="login">Логин:</label>
       {{ form.username }}
-  </div>
 
-  <div class="form-group">
-    <label for="login">Пароль:</label>
+
+
+      <label for="login">Пароль:</label>
       {{ form.password }}
+
+
+
+      <input type="submit" value="Войти" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
   </div>
+</div>
 
-
-  <input class="btn btn-success" type="submit" value="Войти" />
-  <input type="hidden" name="next" value="{{ next }}" />
-  </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
 <!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->

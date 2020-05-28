@@ -300,7 +300,11 @@
     });
     </script>
   {% else %}
-    <a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
+  <div class="reg-form-screen">
+    <div class="reg-form">
+      <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+    </div>
+  </div>
   {% endif %}
 
 {% endblock %}
