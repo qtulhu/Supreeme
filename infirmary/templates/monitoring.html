@@ -37,7 +37,41 @@
       <div class="index-list-tab">
         <div class="index-list-tabes-pacient">
           <div class="tabes-pacient-cell">
-            <input type="submit" name="add-room" value="Добавить палату" class="button-success">
+            <a class="button-add-pacient" href="#addRoomModal">Добавить палату</a>
+            <div id="addRoomModal" class="modalDialog">
+              <div>
+                <a href="#close" title="Закрыть" class="close">X</a>
+                <h4>Новая палата</h4>
+                <div class="index-list-tab">
+                  <div class="index-list-tabes-pacient">
+                    <div class="tabes-pacient-cell">
+                      <input type="text" name="room-number" placeholder="Номер палаты">
+                      </div>
+                      <div class="tabes-pacient-cell">
+                      <input type="text" name="beds" placeholder="Количество коек">
+                      </div>
+                      <div class="tabes-pacient-cell">
+                      <input type="submit" name="addRoom" value="Сохранить" class="button-success">
+                    </div>
+                    <div class="tabes-pacient-cell">
+                      <h5>Удалить палату</h5>
+                      </div>
+                      <div class="tabes-pacient-cell">
+                      <select id="#" class="select-pacient">
+                        <option selected hidden>Палата</option>
+                        <option value="#">1</option>
+                        <option value="#">2</option>
+                        <option value="#">3</option>
+                      </select>
+                    </div>
+                    <div class="tabes-pacient-cell">
+                      <input type="submit" name="delRoom" value="Удалить" class="button-danger">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
             <div class="monitoring-level-top">
               <div class="monitoring-level-top-item">
@@ -171,7 +205,44 @@
             <div class="monitoring-level-secondary">
               <h4>Палата №... (После нажатия на палату в этом блоке отображаются койки)</h4>
               <div class="tabes-pacient-cell">
-                <input type="submit" name="add-bed" value="Добавить койку" class="button-success">
+                <a class="button-add-pacient" href="#addBedModal">Добавить койку</a>
+                <div id="addBedModal" class="modalDialog">
+                  <div>
+                    <a href="#close" title="Закрыть" class="close">X</a>
+                    <h4>Новая койка</h4>
+                    <div class="index-list-tab">
+                      <div class="index-list-tabes-pacient">
+                        <div class="tabes-pacient-cell">
+                          <input type="text" name="bed-number" placeholder="Номер койки">
+                          </div>
+                          <div class="tabes-pacient-cell">
+                            <select id="#" class="select-pacient">
+                              <option selected hidden>Терминал</option>
+                              <option value="#">1</option>
+                              <option value="#">2</option>
+                              <option value="#">3</option>
+                            </select>
+                          </div>
+
+                        <div class="tabes-pacient-cell">
+                          <h5>Удалить палату</h5>
+                          </div>
+                          <div class="tabes-pacient-cell">
+                          <select id="#" class="select-pacient">
+                            <option selected hidden>Койка</option>
+                            <option value="#">1</option>
+                            <option value="#">2</option>
+                            <option value="#">3</option>
+                          </select>
+                        </div>
+                        <div class="tabes-pacient-cell">
+                          <input type="submit" name="delRoom" value="Удалить" class="button-danger">
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="monitoring-level-secondary-item">
                 <div class="monitoring-level-secondary-item-bed-online"><span>1</span></div>
@@ -191,18 +262,18 @@
 
             </div>
 
+          </div>
         </div>
       </div>
+
     </div>
 
-  </div>
-
-  {% else %}
-  <div class="reg-form-screen">
-    <div class="reg-form">
-      <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+    {% else %}
+    <div class="reg-form-screen">
+      <div class="reg-form">
+        <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+      </div>
     </div>
-  </div>
-  {% endif %}
+    {% endif %}
 
-  {% endblock %}
+    {% endblock %}
