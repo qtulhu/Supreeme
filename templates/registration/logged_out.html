@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="login-block">
-  <div class="card bg-light">
-    <form class="form-control">
-      <div class="form-group">
 
-<h6>До Встречи!</h6>
-
-<a class="btn btn-success" href="{% url 'login'%}">Авторизироваться</a>
-
-</div>
-</form>
+<div class="reg-form-screen">
+  <div class="reg-form">
+    <h5>До Встречи!</h5>
+    <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+  </div>
 </div>
 
-</div>
 {% endblock %}
