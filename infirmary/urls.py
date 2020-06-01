@@ -10,4 +10,7 @@ urlpatterns = [
     path('archive', views.archive, name='archive'),
     path('help', views.help, name='help'),
     path('monitoring', views.monitoring, name='monitoring'),
+    path('hospital_info', views.hospital_info, name='hospital_info'),
+    path('profile', views.profile, name='profile'),
+    path('messenger', views.messenger, name='messenger'),
 ]
