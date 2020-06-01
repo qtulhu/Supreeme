@@ -62,3 +62,21 @@ def monitoring(request):
 	    request,
 	    'monitoring.html',
 	)
+
+def hospital_info(request):
+	return render(
+	    request,
+	    'hospital-info.html',
+	)
+
+def profile(request):
+	return render(
+	    request,
+	    'profile.html',
+	)
+
+def messenger(request):
+	return render(
+	    request,
+	    'messenger.html',
+	)

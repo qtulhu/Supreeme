@@ -15,9 +15,10 @@
       <ul>
         <li><a href="monitoring" class="active-nav">Мониторинг</a></li>
         <li><a href="/" >Текущие пациенты</a></li>
+        <li><a href="messenger">Сообщения</a></li>
         <li><a href="archive" >Архив</a></li>
         <li><a href="help">Помощь</a></li>
-        <li><a href="">Профиль</a></li>
+        <li><a href="profile">Профиль</a></li>
         <li><a href="{% url 'logout'%}">Выйти</a></li>
       </ul>
     </nav>
@@ -33,45 +34,12 @@
 
   <div class="content">
     <div class="content-block index-list">
-      <h4><a href="#">Медицинское учреждение №58 (Городская больница)</a></h4>
+      <h4><a href="hospital_info">Медицинское учреждение №58 (Городская больница)</a></h4>
       <div class="index-list-tab">
         <div class="index-list-tabes-pacient">
           <div class="tabes-pacient-cell">
-            <a class="button-add-pacient" href="#addRoomModal">Добавить палату</a>
-            <div id="addRoomModal" class="modalDialog">
-              <div>
-                <a href="#close" title="Закрыть" class="close">X</a>
-                <h4>Новая палата</h4>
-                <div class="index-list-tab">
-                  <div class="index-list-tabes-pacient">
-                    <div class="tabes-pacient-cell">
-                      <input type="text" name="room-number" placeholder="Номер палаты">
-                      </div>
-                      <div class="tabes-pacient-cell">
-                      <input type="text" name="beds" placeholder="Количество коек">
-                      </div>
-                      <div class="tabes-pacient-cell">
-                      <input type="submit" name="addRoom" value="Сохранить" class="button-success">
-                    </div>
-                    <div class="tabes-pacient-cell">
-                      <h5>Удалить палату</h5>
-                      </div>
-                      <div class="tabes-pacient-cell">
-                      <select id="#" class="select-pacient">
-                        <option selected hidden>Палата</option>
-                        <option value="#">1</option>
-                        <option value="#">2</option>
-                        <option value="#">3</option>
-                      </select>
-                    </div>
-                    <div class="tabes-pacient-cell">
-                      <input type="submit" name="delRoom" value="Удалить" class="button-danger">
-                    </div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
+
             </div>
             <div class="monitoring-level-top">
               <div class="monitoring-level-top-item">
@@ -225,7 +193,7 @@
                           </div>
 
                         <div class="tabes-pacient-cell">
-                          <h5>Удалить палату</h5>
+                          <input type="submit" name="delRoom" value="Добавить" class="button-success">
                           </div>
                           <div class="tabes-pacient-cell">
                           <select id="#" class="select-pacient">
@@ -250,15 +218,47 @@
                 <div class="monitoring-level-secondary-item-bed-online"><span>3</span></div>
                 <div class="monitoring-level-secondary-item-bed-online"><span>4</span></div>
                 <div class="monitoring-level-secondary-item-bed-online"><span>5</span></div>
-                <div class="monitoring-level-secondary-item-bed-offline"><span>6</span></div>
-                <div class="monitoring-level-secondary-item-bed-offline"><span>7</span></div>
-                <div class="monitoring-level-secondary-item-bed-offline"><span>8</span></div>
-                <div class="monitoring-level-secondary-item-bed-offline"><span>9</span></div>
+                <div class="monitoring-level-secondary-item-bed-wait"><span><a href="#bedStatusWait">6</a></span></div>
+                <div class="monitoring-level-secondary-item-bed-wait"><span><a href="#bedStatusWait">7</a></span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span><a href="#bedStatus">8</a></span></div>
+                <div class="monitoring-level-secondary-item-bed-offline"><span><a href="#bedStatus">9</a></span></div>
                 <div class="monitoring-level-secondary-item-bed-none"><span>10</span></div>
                 <div class="monitoring-level-secondary-item-bed-none"><span>11</span></div>
                 <div class="monitoring-level-secondary-item-bed-none"><span>12</span></div>
               </div>
+              <div id="bedStatus" class="modalDialog">
+                <div>
+                  <a href="#close" title="Закрыть" class="close">X</a>
+                  <h4>Обнаружена проблема в работе терминала</h4>
+                  <div class="index-list-tab">
+                    <div class="index-list-tabes-pacient">
+                      <div class="tabes-pacient-cell">
+                        <textarea name="problem-bed-comment" rows="8" cols="80" placeholder="Введите комментарий к проблеме"></textarea>
 
+                        </div>
+                        <div class="tabes-pacient-cell">
+                          <input type="submit" name="save-bed-problem" value="Сохранить" class="button-success">
+                        </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="bedStatusWait" class="modalDialog">
+                <div>
+                  <a href="#close" title="Закрыть" class="close">X</a>
+                  <h4>Обнаруженные проблемы</h4>
+                  <div class="index-list-tab">
+                    <div class="index-list-tabes-pacient">
+                      <div class="tabes-pacient-cell">
+                        <p>Описание обнаруженной проблемы</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
 

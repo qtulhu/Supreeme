@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Архив пациентов | Система СУПРИМ</title>
+<meta name="Description" content=" index ">
+{% endblock %}
+
+
+{% block header %}
+  {% if user.is_authenticated %}
+<div class="main-container">
+<div class="header">
+  <nav>
+    <ul>
+      <li><a href="monitoring">Мониторинг</a></li>
+      <li><a href="/" >Текущие пациенты</a></li>
+      <li><a href="messenger" class="active-nav">Сообщения</a></li>
+      <li><a href="archive">Архив</a></li>
+      <li><a href="help">Помощь</a></li>
+      <li><a href="profile">Профиль</a></li>
+      <li><a href="{% url 'logout'%}">Выйти</a></li>
+    </ul>
+  </nav>
+</div>
+  {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="content">
+  <div class="content-block index-list">
+    <h4>Сообщения</h4>
+    <div class="index-list-tab">
+      <div class="index-list-tabes-pacient">
+        <div class="index-list-tabes">
+          <div class="tabes-pacient-cell">
+          <select id="#" class="select-contact" size="5" multiple="multiple">
+
+            <option value="#">Иванов</option>
+            <option value="#">Петров</option>
+            <option value="#">Цой</option>
+          </select>
+          <textarea name="message-text" rows="8" cols="30" placeholder="Ваше сообщение"></textarea>
+          </div>
+          <div class="tabes-pacient-cell">
+            <input type="submit" name="send-message" value="Отправить" class="button-success">
+          </div>
+          <div class="tabes-pacient-cell">
+          
+          </div>
+          <div class="tabes-pacient-cell">
+          <select id="#" class="select-contact" size="5" multiple="multiple">
+            <option value="#">Иванов</option>
+            <option value="#">Петров</option>
+            <option value="#">Цой</option>
+          </select>
+          <p>Текст сообщения</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% else %}
+<div class="reg-form-screen">
+  <div class="reg-form">
+    <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

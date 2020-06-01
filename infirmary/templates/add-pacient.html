@@ -13,9 +13,10 @@
     <ul>
       <li><a href="monitoring">Мониторинг</a></li>
       <li><a href="/" >Текущие пациенты</a></li>
+      <li><a href="messenger">Сообщения</a></li>
       <li><a href="archive">Архив</a></li>
       <li><a href="help">Помощь</a></li>
-      <li><a href="">Профиль</a></li>
+      <li><a href="profile">Профиль</a></li>
       <li><a href="{% url 'logout'%}">Выйти</a></li>
     </ul>
   </nav>
@@ -63,19 +64,19 @@
                 </div>
                 <div class="tabes-pacient-cell">
                         <select id="#" class="select-pacient">
-                          <option disabled>Выберите палату</option>
+                          <option selected hidden>Выберите палату</option>
                           <option value="#">Палата 1</option>
                           <option value="#">Палата 2</option>
                           <option value="#">Палата 3</option>
                         </select>
                         <select id="#" class="select-pacient">
-                          <option disabled>Выберите койку</option>
+                          <option selected hidden>Выберите койку</option>
                           <option value="#">Койка 1</option>
                           <option value="#">Койка 2</option>
                           <option value="#">койка 3</option>
                         </select>
                         <select id="#" class="select-pacient">
-                          <option disabled>Выберите устройство</option>
+                          <option selected hidden>Выберите устройство</option>
                           <option value="#">terminal 1</option>
                           <option value="#">terminal 2</option>
                           <option value="#">terminal 3</option>
