@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Архив пациентов | Система СУПРИМ</title>
+<meta name="Description" content=" index ">
+{% endblock %}
+
+
+{% block header %}
+  {% if user.is_authenticated %}
+<div class="main-container">
+<div class="header">
+  <nav>
+    <ul>
+      <li><a href="monitoring">Мониторинг</a></li>
+      <li><a href="/" >Текущие пациенты</a></li>
+      <li><a href="messenger">Сообщения</a></li>
+      <li><a href="archive">Архив</a></li>
+      <li><a href="help">Помощь</a></li>
+      <li><a href="profile" class="active-nav">Профиль</a></li>
+      <li><a href="{% url 'logout'%}">Выйти</a></li>
+    </ul>
+  </nav>
+</div>
+  {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="content">
+  <div class="content-block index-list">
+    <h4>Коломин Иван Владимирович</h4>
+    <div class="index-list-tab">
+      <div class="index-list-tabes-pacient">
+        <div class="index-list-tabes">
+          <div class="profile-page">
+          <div class="tabes-pacient-cell">
+            <div class="profile-pic">
+            <img src="../static/img/Hi9P8hf4hcI.jpg">
+            </div>
+            </div>
+            <div class="tabes-pacient-cell">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Должность:</th>
+                      <th>Терапевт</th>
+                    </tr>
+                    <tr>
+                      <th>Текущих пациентов:</th>
+                      <th>12</th>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% else %}
+<div class="reg-form-screen">
+  <div class="reg-form">
+    <a class="button-add-pacient" href="{% url 'login'%}">Авторизироваться</a>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

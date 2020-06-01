@@ -189,8 +189,8 @@ select {
   }
 
   .health-logs {
-    width: 609px;
-    margin-right: 100px;
+    width: 646px;
+    margin-right: 80px;
   }
 
   .dynamic-view {
@@ -295,7 +295,7 @@ select {
         opacity: 0;
     }
     100% {
-        margin-top: 180px;
+        margin-top: 30px;
         opacity: 1;
     }
 }
@@ -813,14 +813,24 @@ select {
 }
 
 .monitoring-level-secondary-item-bed-offline span {
-  margin: auto;
   color:#fff;
   font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
 }
+
+.monitoring-level-secondary-item-bed-wait span {
+  color:#fff;
+  font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
+}
+
 .monitoring-level-secondary-item-bed-none span {
   margin: auto;
   color:#333;
   font-size: 1.3rem;
+
 }
 .monitoring-level-secondary-item-bed-offline {
   width: 10%;
@@ -829,6 +839,45 @@ select {
   background: #E53935;
   margin-right: 10px;
   border-radius: 10px;
+}
+
+.monitoring-level-secondary-item-bed-wait {
+  width: 10%;
+  height: 25%;
+  display: flex;
+  background: #F9A825;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.monitoring-level-secondary-item-bed-offline span a {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+.monitoring-level-secondary-item-bed-wait span a {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+.monitoring-level-secondary-item-bed-offline span a:hover {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.monitoring-level-secondary-item-bed-wait span a:hover {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .monitoring-level-secondary-item-bed-none {
@@ -873,4 +922,29 @@ select {
   border: 1px solid #CFD8DC;
   border-radius: 5px;
 
+}
+
+.profile-pic img {
+  max-width: 200px;
+  border-radius: 100px;
+}
+
+.tabes-pacient-cell table {
+  text-align: left;
+}
+
+.tabes-pacient-cell table tbody tr th {
+  border-right: none;
+}
+
+.profile-page {
+  padding: 20px 0px 20px 0px;
+}
+
+.profile-page .tabes-pacient-cell {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  align-items: center;
 }
